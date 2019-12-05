@@ -3,10 +3,9 @@
   <persistence-unit name="CocoFormsPU" transaction-type="JTA">
     <jta-data-source>java:app/cocoDB</jta-data-source>
     <class>entidades.Encuesta</class>
-    <class>entidades.Opciones</class>
     <class>entidades.Pregunta</class>
     <class>entidades.Usuario</class>
-    <class>entidades.Respuesta</class>
+    <class>entidades.Preguntaabcd</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>

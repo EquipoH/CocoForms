@@ -1,12 +1,9 @@
 /*
-/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package entidades;
-
-
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,14 +18,13 @@ import javax.persistence.Table;
  */
 
 
-
-
 @Entity
-@Table(name="pregunta")
+@Table(name="preguntaabcd")
 @NamedQueries({
-@NamedQuery(name = "Preguntas", query = "SELECT pregunta from Pregunta pregunta where pregunta.fk_encuesta= :encuesta")
+@NamedQuery(name = "Preguntasabcd", query = "SELECT preguntaabcd from Preguntaabcd preguntaabcd where preguntaabcd.fk_encuesta= :encuesta")
 })
-public class Pregunta {
+public class Preguntaabcd {
+    
     @Id
     @Column (name="id")
     private int id;
@@ -41,6 +37,16 @@ public class Pregunta {
     
     @Column (name="fk_encuesta")
     private int fk_encuesta;
+
+    public Preguntaabcd() {
+    }
+
+    public Preguntaabcd(int id, String texto, int respuesta, int fk_encuesta) {
+        this.id = id;
+        this.texto = texto;
+        this.respuesta = respuesta;
+        this.fk_encuesta = fk_encuesta;
+    }
 
     public int getId() {
         return id;
@@ -73,21 +79,8 @@ public class Pregunta {
     public void setFk_encuesta(int fk_encuesta) {
         this.fk_encuesta = fk_encuesta;
     }
-
-    public Pregunta() {
-    }
-
-    public Pregunta(int id, String texto, int respuesta, int fk_encuesta) {
-        this.id = id;
-        this.texto = texto;
-        this.respuesta = respuesta;
-        this.fk_encuesta = fk_encuesta;
-    }
-
-    
-    
-  
     
     
 
+    
 }
