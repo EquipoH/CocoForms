@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,9 +10,11 @@ import entidades.Encuesta;
 import entidades.Pregunta;
 import entidades.Preguntaabcd;
 import entidades.Respuestaabcd;
+import entidades.Usuario;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.model.SelectItem;
@@ -37,9 +40,8 @@ public class MbIndex implements Serializable {
     private ArrayList<Preguntaabcd> cmb3 = null;
     private ArrayList<Pregunta> cmb4 = null;
     private ArrayList<Respuestaabcd> cmb5 = null;
-    
-    private String usuario="";
-    private String password = "";
+    private String user="";
+    private String password="";
 
     public ArrayList<Respuestaabcd> getCmb5() {
         return cmb5;
@@ -102,12 +104,12 @@ public class MbIndex implements Serializable {
         this.cmb4 = cmb4;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUser() {
+        return user;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getPassword() {
@@ -117,8 +119,6 @@ public class MbIndex implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
     
     
 
@@ -169,12 +169,9 @@ public class MbIndex implements Serializable {
 
     }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
      public String ingresar() {
-        String nombre = usuario;
-        String contrasena = password;
-      
+        String nombre=this.user;
+        String contrasena = this.password;
         EntityManagerFactory emf;
         EntityManager em;
         emf = Persistence.createEntityManagerFactory("CocoFormsPU");
@@ -185,15 +182,19 @@ public class MbIndex implements Serializable {
         //consulta.setParameter("inicio",nombre);
         //consulta.setParameter("inicio", contrasena);
         List<Usuario> tipo = consulta.getResultList();
-        System.out.println("Usuario:"+nombre);
-        System.out.println("Contrasena:"+contrasena);
+        System.out.println("Usuario de login:"+nombre);
+        System.out.println("Contraseña de login:"+contrasena);
         
-        System.out.println("se va hacer el primer for");
+        
         for (Usuario usuario : tipo) {
-            System.out.println("Usuario:"+usuario.getNombre());
-            System.out.println("Usuario:"+usuario.getFk_pregunta());
-            
+            System.out.println("Nombre bd:"+usuario.getNombre());
+            System.out.println("Contra bd:"+usuario.getFk_pregunta());
+            System.out.println("X");
+            if(usuario.getNombre().equals(nombre)){
+                System.out.println("Correcto");
+            }
             if(usuario.getNombre().equals(nombre) && usuario.getFk_pregunta().equals(contrasena)){
+            System.out.println("se va hacer el primer for");
             return "logout";
           
             }else{return "cuestionario";}
@@ -206,10 +207,6 @@ public class MbIndex implements Serializable {
      
      
     
-=======
->>>>>>> parent of bcd73f3... Ya valio
-=======
->>>>>>> parent of bcd73f3... Ya valio
      public String Eliminar(Encuesta encuesta) {
       System.out.println("Id: "+encuesta.getId());
       EntityManagerFactory emf;
@@ -219,9 +216,10 @@ public class MbIndex implements Serializable {
      em = emf.createEntityManager();
     
    
+    
     Query consulta =em.createNamedQuery("EliminarEncuesta");
     consulta.setParameter("user", encuesta.getId());
-    consulta.executeUpdate();
+   consulta.executeUpdate();
     System.out.println("Mike");
     
     return "logout";
@@ -245,6 +243,7 @@ public class MbIndex implements Serializable {
         
     return "graficas";
     }
+    
     
 
 
