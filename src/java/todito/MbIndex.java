@@ -170,6 +170,7 @@ public class MbIndex implements Serializable {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
      public String ingresar() {
         String nombre = usuario;
         String contrasena = password;
@@ -205,6 +206,8 @@ public class MbIndex implements Serializable {
      
      
     
+=======
+>>>>>>> parent of bcd73f3... Ya valio
 =======
 >>>>>>> parent of bcd73f3... Ya valio
      public String Eliminar(Encuesta encuesta) {
