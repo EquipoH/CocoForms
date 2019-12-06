@@ -29,8 +29,19 @@ public class Preguntaabcd {
     @Column (name="id")
     private int id;
     
-    @Column (name="texto")
-    private String texto;
+    @Column (name="text")
+    private String text;
+    
+     @Column (name="a")
+    private String a;
+     
+        @Column (name="b")
+    private String b;
+        
+           @Column (name="c")
+    private String c;
+              @Column (name="d")
+    private String d;
     
     @Column (name="respuesta")
     private int respuesta;
@@ -38,14 +49,18 @@ public class Preguntaabcd {
     @Column (name="fk_encuesta")
     private int fk_encuesta;
 
-    public Preguntaabcd() {
-    }
-
-    public Preguntaabcd(int id, String texto, int respuesta, int fk_encuesta) {
+    public Preguntaabcd(int id, String text, String a, String b, String c, String d, int respuesta, int fk_encuesta) {
         this.id = id;
-        this.texto = texto;
+        this.text = text;
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
         this.respuesta = respuesta;
         this.fk_encuesta = fk_encuesta;
+    }
+
+    public Preguntaabcd() {
     }
 
     public int getId() {
@@ -56,12 +71,44 @@ public class Preguntaabcd {
         this.id = id;
     }
 
-    public String getTexto() {
-        return texto;
+    public String getText() {
+        return text;
     }
 
-    public void setTexto(String texto) {
-        this.texto = texto;
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getA() {
+        return a;
+    }
+
+    public void setA(String a) {
+        this.a = a;
+    }
+
+    public String getB() {
+        return b;
+    }
+
+    public void setB(String b) {
+        this.b = b;
+    }
+
+    public String getC() {
+        return c;
+    }
+
+    public void setC(String c) {
+        this.c = c;
+    }
+
+    public String getD() {
+        return d;
+    }
+
+    public void setD(String d) {
+        this.d = d;
     }
 
     public int getRespuesta() {
@@ -80,7 +127,6 @@ public class Preguntaabcd {
         this.fk_encuesta = fk_encuesta;
     }
     
-    
 
-    
+       
 }

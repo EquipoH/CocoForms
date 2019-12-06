@@ -96,7 +96,7 @@ public class MbIndex implements Serializable {
          List <Pregunta> tipo= consulta.getResultList(); 
          
 
-         
+         System.out.println("se va hacer el primer for");
           for(Pregunta pregunta : tipo){
               
               System.out.println(pregunta.getTexto());
@@ -104,24 +104,24 @@ public class MbIndex implements Serializable {
               cmb2.add(pregunta);
               
           }
-          
+         System.out.println("se termino el primer for"); 
           
           
         Query consulta2 = em.createNamedQuery("Preguntasabcd");
-        consulta.setParameter("encuesta", formSelected.getId());
+        consulta2.setParameter("encuesta", formSelected.getId());
          List <Preguntaabcd> tipo2= consulta2.getResultList(); 
-         
+            
          System.out.println(formSelected.getId());
-         
-          for(Preguntaabcd preguntaabcd : tipo2){
+         System.out.println("se va hacer el segundo for");
+                   for(Preguntaabcd preguntaabcd : tipo2){
               
-              System.out.println(preguntaabcd.getTexto());
+              System.out.println(preguntaabcd.getText());
               
               cmb3.add(preguntaabcd);
               
           }
           
-          
+          System.out.println("se va terminar el segundo for");
         
     
         return "form";
