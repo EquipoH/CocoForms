@@ -39,6 +39,9 @@ public class MbIndex implements Serializable {
     private ArrayList<Preguntaabcd> cmb3 = null;
     private ArrayList<Pregunta> cmb4 = null;
     private ArrayList<Respuestaabcd> cmb5 = null;
+    
+    private String usuario="";
+    private String password = "";
 
     public ArrayList<Respuestaabcd> getCmb5() {
         return cmb5;
@@ -101,6 +104,26 @@ public class MbIndex implements Serializable {
         this.cmb4 = cmb4;
     }
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    
+    
+    
+
     public MbIndex() {
 
     }
@@ -148,8 +171,9 @@ public class MbIndex implements Serializable {
 
     }
     
-     public String ingresar(String nombre, String contrasena) {
-        
+     public String ingresar() {
+        String nombre = usuario;
+        String contrasena = password;
       
         EntityManagerFactory emf;
         EntityManager em;
@@ -162,7 +186,7 @@ public class MbIndex implements Serializable {
         //consulta.setParameter("inicio", contrasena);
         List<Usuario> tipo = consulta.getResultList();
         System.out.println("Usuario:"+nombre);
-        System.out.println("Usuario:"+contrasena);
+        System.out.println("Contrasena:"+contrasena);
         
         System.out.println("se va hacer el primer for");
         for (Usuario usuario : tipo) {
