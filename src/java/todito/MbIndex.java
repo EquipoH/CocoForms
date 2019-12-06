@@ -135,6 +135,24 @@ public class MbIndex implements Serializable {
         return "form";
 
     }
+    
+     public String Eliminar(Encuesta encuesta) {
+      System.out.println("Id: "+encuesta.getId());
+      EntityManagerFactory emf;
+      EntityManager em;
+      
+     emf = Persistence.createEntityManagerFactory("CocoFormsPU");
+     em = emf.createEntityManager();
+    
+   
+    Query consulta =em.createNamedQuery("EliminarEncuesta");
+    consulta.setParameter("user", encuesta.getId());
+    consulta.executeUpdate();
+    System.out.println("Mike");
+    
+    return "logout";
+     }
+    
     String toLogin(){
     
         return "login";

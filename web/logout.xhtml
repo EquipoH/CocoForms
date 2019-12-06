@@ -8,7 +8,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-          <p:commandButton value="Login" id="withIcon" action="logout"  style="margin-right:20px;" />
+          <p:commandButton value="Logout" id="withIcon" action="login"  style="margin-right:20px;" />
                  
 
         
@@ -30,17 +30,18 @@
                         <h:outputText value="#{encuesta.fecha_v}" />
 
                         <p:commandButton value="Contestar" id="withIcon" action="#{mbIndex.toForm(encuesta)}"  style="margin-right:20px;" icon="pi pi-save" />
+                        <p:commandButton value="Modificar" id="Modificar" action="#{mbIndex.toForm(encuesta)}"  style="margin-right:20px;" />
+                        <p:commandButton value="Eliminar" id="Eliminar" action="#{mbIndex.Eliminar(encuesta)}"  style="margin-right:20px;" />
+                       
                     </h:panelGrid>
                 </p:panel>
 
             </p:dataGrid>
 
-
+            <p:commandButton value="Nuevo cuestionario" id="withIcon" action="cuestionario"  style="margin-right:20px;" />
+            
         </h:form>
-
-
-
-
+     
 
     </h:body>
 </html>

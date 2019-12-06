@@ -25,7 +25,7 @@ import javax.persistence.Table;
 @Table(name="encuesta")
 @NamedQueries({
 @NamedQuery(name="FindtoAllEncuestas",query="SELECT encuesta from Encuesta encuesta"),
-
+@NamedQuery(name="EliminarEncuesta",query="DELETE FROM Encuesta c WHERE c.id = :user")
 
 })
 public class Encuesta implements Serializable {
