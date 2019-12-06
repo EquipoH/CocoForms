@@ -53,8 +53,25 @@
 
                 </h:panelGrid>
             </p:dataScroller>
+            
         </h:form>
+ <h:form> 
+            <p:dataScroller value="#{mbIndex.cmb3}" var="pregunta" chunkSize="10">
+              
+                
+                <h:panelGrid columns="2" style="width:100%">
 
+
+                    <p:outputPanel>
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputText value="#{pregunta.text}" style="font-weight: bold"/>
+                        </h:panelGrid>
+                    </p:outputPanel>
+
+                </h:panelGrid>
+            </p:dataScroller>
+            
+        </h:form>
     </h:body>
 </html>
 
