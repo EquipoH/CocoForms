@@ -9,9 +9,11 @@ import entidades.Encuesta;
 import entidades.Pregunta;
 import entidades.Preguntaabcd;
 import entidades.Respuestaabcd;
+import entidades.Usuario;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.model.SelectItem;
@@ -146,6 +148,40 @@ public class MbIndex implements Serializable {
 
     }
     
+     public String ingresar(String nombre, String contrasena) {
+        
+      
+        EntityManagerFactory emf;
+        EntityManager em;
+        emf = Persistence.createEntityManagerFactory("CocoFormsPU");
+        em = emf.createEntityManager();
+
+        Query consulta = em.createNamedQuery("Usuario");
+    
+        //consulta.setParameter("inicio",nombre);
+        //consulta.setParameter("inicio", contrasena);
+        List<Usuario> tipo = consulta.getResultList();
+        System.out.println("Usuario:"+nombre);
+        System.out.println("Usuario:"+contrasena);
+        
+        System.out.println("se va hacer el primer for");
+        for (Usuario usuario : tipo) {
+            System.out.println("Usuario:"+usuario.getNombre());
+            System.out.println("Usuario:"+usuario.getFk_pregunta());
+            
+            if(usuario.getNombre().equals(nombre) && usuario.getFk_pregunta().equals(contrasena)){
+            return "logout";
+          
+            }else{return "cuestionario";}
+
+        }
+             
+        return null;
+
+    }
+     
+     
+    
      public String Eliminar(Encuesta encuesta) {
       System.out.println("Id: "+encuesta.getId());
       EntityManagerFactory emf;
@@ -155,9 +191,10 @@ public class MbIndex implements Serializable {
      em = emf.createEntityManager();
     
    
+    
     Query consulta =em.createNamedQuery("EliminarEncuesta");
     consulta.setParameter("user", encuesta.getId());
-    consulta.executeUpdate();
+   consulta.executeUpdate();
     System.out.println("Mike");
     
     return "logout";

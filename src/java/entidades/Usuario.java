@@ -27,7 +27,7 @@ import javax.persistence.Table;
 @Table(name="usuario")
 @NamedQueries({
 @NamedQuery(name="Usuario",query="SELECT usuario from Usuario usuario"),
-
+//@NamedQuery(name="inicio",query="SELECT usuario from Usuario usuario where usuario.nombre=:nombre and usuario.fk_pregunta=:contrasena")
 
 })
 public class Usuario {
@@ -50,6 +50,7 @@ public class Usuario {
         this.nombre = nombre;
         this.fk_pregunta = fk_pregunta;
         this.usuario = usuario;
+        
     }
 
     public int getId() {

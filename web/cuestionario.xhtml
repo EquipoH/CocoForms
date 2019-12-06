@@ -15,8 +15,18 @@ and open the template in the editor.
     <body>
                
  <h:form>   
-    <h3>Basic</h3>
-    <p:inputText />   
+    <table>
+            <tr>
+               <td>Name:</td>
+               <td><h:inputText var="encuesta" value="name"> <h:inputText/></td>
+            </tr>
+            <tr>
+               <td>Password:</td>
+               <td><h:inputSecret value="password"/></td>
+            </tr>
+    </table>
+       <p><h:commandButton value="Login" action="#{mbIndex.ingresar(name, password)}"/></p>
+
 </h:form>
         
     </body>
