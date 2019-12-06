@@ -50,8 +50,8 @@
                             <h:outputText value="#{pregunta.texto}" style="font-weight: bold"/>
                             <br/>
                             <h:selectOneRadio value="#{user.favColor1}">
-                                <f:selectItem itemValue="Red" itemLabel="Verdadero" />
-                                <f:selectItem itemValue="Green" itemLabel="Falso" />
+                                <f:selectItem itemValue="t" itemLabel="Verdadero" />
+                                <f:selectItem itemValue="f" itemLabel="Falso" />
 
                             </h:selectOneRadio>
                         </h:panelGrid>
@@ -73,10 +73,10 @@
                             <h:outputText value="#{pregunta.text}" style="font-weight: bold"/>
                             <br/>
                             <h:selectOneRadio value="#{user.favColor1}">
-                                <f:selectItem itemValue="Red" itemLabel="#{pregunta.a}" />
-                                <f:selectItem itemValue="Green" itemLabel="#{pregunta.b}" />
-                                <f:selectItem itemValue="Blue" itemLabel="#{pregunta.c}" />
-                                <f:selectItem itemValue="Black" itemLabel="#{pregunta.d}" />
+                                <f:selectItem itemValue="a" itemLabel="#{pregunta.a}" />
+                                <f:selectItem itemValue="b" itemLabel="#{pregunta.b}" />
+                                <f:selectItem itemValue="c" itemLabel="#{pregunta.c}" />
+                                <f:selectItem itemValue="d" itemLabel="#{pregunta.d}" />
                             </h:selectOneRadio>
                         </h:panelGrid>
                     </p:outputPanel>
@@ -85,7 +85,7 @@
             </p:dataScroller>
 
         </h:form>
-        
+        <p:commandButton value="Contestar" id="withIcon" action="login"  style="margin-right:20px;" />
     </h:body>
 </html>
 
