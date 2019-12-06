@@ -135,5 +135,9 @@ public class MbIndex implements Serializable {
         return "form";
 
     }
+    String toLogin(){
+    
+        return "login";
+    }
 
 }

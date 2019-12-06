@@ -8,9 +8,9 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-   
-        
-        
+
+
+
         Bienvenido a la encuesta: <h:outputText value="#{mbIndex.formSelected.titulo}"></h:outputText>
         <style type="text/css">
             .logo {
@@ -41,7 +41,7 @@
                 <f:facet name="header">
                     Encuesta
                 </f:facet>
-                
+
                 <h:panelGrid columns="2" style="width:100%">
 
 
@@ -50,21 +50,21 @@
                             <h:outputText value="#{pregunta.texto}" style="font-weight: bold"/>
                             <br/>
                             <h:selectOneRadio value="#{user.favColor1}">
-   	<f:selectItem itemValue="Red" itemLabel="Verdadero" />
-   	<f:selectItem itemValue="Green" itemLabel="Falso" />
+                                <f:selectItem itemValue="Red" itemLabel="Verdadero" />
+                                <f:selectItem itemValue="Green" itemLabel="Falso" />
 
-</h:selectOneRadio>
+                            </h:selectOneRadio>
                         </h:panelGrid>
                     </p:outputPanel>
 
                 </h:panelGrid>
             </p:dataScroller>
-            
+
         </h:form>
- <h:form> 
+        <h:form> 
             <p:dataScroller value="#{mbIndex.cmb3}" var="pregunta" chunkSize="10">
-              
-                
+
+
                 <h:panelGrid columns="2" style="width:100%">
 
 
@@ -73,18 +73,19 @@
                             <h:outputText value="#{pregunta.text}" style="font-weight: bold"/>
                             <br/>
                             <h:selectOneRadio value="#{user.favColor1}">
-   	<f:selectItem itemValue="Red" itemLabel="#{pregunta.a}" />
-   	<f:selectItem itemValue="Green" itemLabel="#{pregunta.b}" />
-   	<f:selectItem itemValue="Blue" itemLabel="#{pregunta.c}" />
-           	<f:selectItem itemValue="Black" itemLabel="#{pregunta.d}" />
-</h:selectOneRadio>
+                                <f:selectItem itemValue="Red" itemLabel="#{pregunta.a}" />
+                                <f:selectItem itemValue="Green" itemLabel="#{pregunta.b}" />
+                                <f:selectItem itemValue="Blue" itemLabel="#{pregunta.c}" />
+                                <f:selectItem itemValue="Black" itemLabel="#{pregunta.d}" />
+                            </h:selectOneRadio>
                         </h:panelGrid>
                     </p:outputPanel>
 
                 </h:panelGrid>
             </p:dataScroller>
-            
+
         </h:form>
+        
     </h:body>
 </html>
 
