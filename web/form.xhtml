@@ -48,6 +48,12 @@
                     <p:outputPanel>
                         <h:panelGrid columns="2" cellpadding="5">
                             <h:outputText value="#{pregunta.texto}" style="font-weight: bold"/>
+                            <br/>
+                            <h:selectOneRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="Verdadero" />
+   	<f:selectItem itemValue="Green" itemLabel="Falso" />
+
+</h:selectOneRadio>
                         </h:panelGrid>
                     </p:outputPanel>
 
@@ -65,6 +71,13 @@
                     <p:outputPanel>
                         <h:panelGrid columns="2" cellpadding="5">
                             <h:outputText value="#{pregunta.text}" style="font-weight: bold"/>
+                            <br/>
+                            <h:selectOneRadio value="#{user.favColor1}">
+   	<f:selectItem itemValue="Red" itemLabel="#{pregunta.a}" />
+   	<f:selectItem itemValue="Green" itemLabel="#{pregunta.b}" />
+   	<f:selectItem itemValue="Blue" itemLabel="#{pregunta.c}" />
+           	<f:selectItem itemValue="Black" itemLabel="#{pregunta.d}" />
+</h:selectOneRadio>
                         </h:panelGrid>
                     </p:outputPanel>
 
