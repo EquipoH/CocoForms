@@ -9,11 +9,9 @@ import entidades.Encuesta;
 import entidades.Pregunta;
 import entidades.Preguntaabcd;
 import entidades.Respuestaabcd;
-import entidades.Usuario;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.model.SelectItem;
@@ -171,6 +169,7 @@ public class MbIndex implements Serializable {
 
     }
     
+<<<<<<< HEAD
      public String ingresar() {
         String nombre = usuario;
         String contrasena = password;
@@ -206,6 +205,8 @@ public class MbIndex implements Serializable {
      
      
     
+=======
+>>>>>>> parent of bcd73f3... Ya valio
      public String Eliminar(Encuesta encuesta) {
       System.out.println("Id: "+encuesta.getId());
       EntityManagerFactory emf;
@@ -215,10 +216,9 @@ public class MbIndex implements Serializable {
      em = emf.createEntityManager();
     
    
-    
     Query consulta =em.createNamedQuery("EliminarEncuesta");
     consulta.setParameter("user", encuesta.getId());
-   consulta.executeUpdate();
+    consulta.executeUpdate();
     System.out.println("Mike");
     
     return "logout";
