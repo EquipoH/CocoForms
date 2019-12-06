@@ -8,6 +8,7 @@ package todito;
 import entidades.Encuesta;
 import entidades.Pregunta;
 import entidades.Preguntaabcd;
+import entidades.Respuestaabcd;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -35,6 +36,15 @@ public class MbIndex implements Serializable {
     private ArrayList<Pregunta> cmb2 = null;
     private ArrayList<Preguntaabcd> cmb3 = null;
     private ArrayList<Pregunta> cmb4 = null;
+    private ArrayList<Respuestaabcd> cmb5 = null;
+
+    public ArrayList<Respuestaabcd> getCmb5() {
+        return cmb5;
+    }
+
+    public void setCmb5(ArrayList<Respuestaabcd> cmb5) {
+        this.cmb5 = cmb5;
+    }
 
     public Encuesta getFormSelected() {
         return formSelected;
@@ -139,5 +149,21 @@ public class MbIndex implements Serializable {
     
         return "login";
     }
+    
+    String hol(String respuesta,int fk_pregunta){
+    
+        System.out.println("se entro al index");
+        
+    return "index";
+    }
+    String toGrafica(){
+    
+        
+        System.out.println("se entro a la grafica");
+        
+    return "graficas";
+    }
+    
+
 
 }
